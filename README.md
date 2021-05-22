@@ -6,13 +6,17 @@ http://nginx.org/en/docs/http/ngx_http_dav_module.html
 
 https://github.com/arut/nginx-dav-ext-module
 
+https://github.com/openresty/headers-more-nginx-module/
+
 ## Features
 
-源码编译 nginx + http_dav_module + nginx-dav-ext-module 安装，镜像体积小
+源码编译 nginx + http_dav_module + nginx-dav-ext-module + headers-more-nginx-module 安装，镜像体积小
 
 支持 `-e USERNAME xxx -e PASSWORD xxx` 设置单用户登录
 
 支持 `-v /your/htpasswd:/opt/nginx/conf/htpasswd:ro` 设置多用户登录
+
+支持部分因为nginx对目录必须以"/" 结尾的规定而报错的客户端
 
 多用户登录方式优先级更高
 
