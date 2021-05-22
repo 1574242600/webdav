@@ -15,8 +15,10 @@ RUN apk update && \
     unzip nginx.zip && \
     wget https://github.com/arut/nginx-dav-ext-module/archive/master.zip -O dav-ext-module.zip && \
     unzip dav-ext-module.zip && \
+    wget https://github.com/openresty/headers-more-nginx-module/archive/master.zip -O headers-more-nginx-module.zip && \
+    unzip headers-more-nginx-module.zip && \
     cd nginx-master && \
-    ./auto/configure --prefix=/opt/nginx --with-http_dav_module --add-module=/tmp/nginx-dav-ext-module-master && \
+    ./auto/configure --prefix=/opt/nginx --with-http_dav_module --add-module=/tmp/nginx-dav-ext-module-master --add-module=/tmp/headers-more-nginx-module-master && \
     make && make install && \
     cd /root && \
     chmod +x /entrypoint.sh && \
